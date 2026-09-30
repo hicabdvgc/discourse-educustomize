@@ -1,0 +1,56 @@
+{
+  "en": {
+    "educustomize": {
+      "invalid_skills": "Each skill must include a name, a description field and a set of instructions.",
+      "configuration": {
+        "duplicate_keys": "Each assistant must have a unique reference key in the configuration file.",
+        "root_missing": "The root assistant referenced by the configuration does not exist in its assistant list.",
+        "invalid_graph": "The configuration must contain the root assistant and all of its Delegates, with no additional assistants. An assistant cannot reference itself, create a cycle, nest Delegates or reference an assistant outside this configuration.",
+        "prompt_too_long": "The combined Prompt and Skills contain more than 100,000 characters. You need to shorten the instructions before saving.",
+        "tools_unavailable": "The following tools are unavailable for course use: %{tools}.",
+        "copy_suffix": " (copy %{number})",
+        "invalid_mapping": "The model mapping is invalid. You need to check that each mapping refers to an assistant in this configuration and a permitted destination model.",
+        "model_required": "You must choose an authorized destination model for this assistant.",
+        "save_failed": "The platform could not create the assistant identified by %{key}.",
+        "name_taken": "The name %{name} is already in use. You need to choose a different name before creating the assistant.",
+        "validation": {
+          "required": "The object at %{path} is missing the following required fields: %{fields}.",
+          "constant": "The value at %{path} must be %{value}.",
+          "unknown_field": "The configuration format does not support the field at %{path}.",
+          "minItems": "The minimum number of items allowed at %{path} is %{limit}.",
+          "maxItems": "The maximum number of items allowed at %{path} is %{limit}.",
+          "minLength": "The minimum number of characters allowed at %{path} is %{limit}.",
+          "maxLength": "The maximum number of characters allowed at %{path} is %{limit}.",
+          "minimum": "The number at %{path} must be greater than or equal to %{limit}.",
+          "maximum": "The number at %{path} must be less than or equal to %{limit}.",
+          "exclusiveMinimum": "The number at %{path} must be greater than %{limit}.",
+          "pattern": "The text at %{path} must match the required pattern (%{pattern}).",
+          "unique_items": "The list at %{path} must not contain duplicate items.",
+          "type": "The value at %{path} does not match the expected JSON type (%{types}).",
+          "invalid": "The value at %{path} does not meet the requirements of the configuration format."
+        }
+      },
+      "invalid": "The course configuration is invalid. You need to check the settings before trying again.",
+      "moderation_required": "An administrator must enable category group moderation before you can configure the course.",
+      "empty_reply": "The model returned a reply with no content.",
+      "review_title": "Generated replies",
+      "draft": "Draft",
+      "approve": "Approve and publish",
+      "reject": "Reject",
+      "dependencies_required": "An administrator must enable Discourse AI, Discourse Workflows and category group moderation before preparing the teaching workflow.",
+      "export_limit": "The result has reached the 10,000-row export limit. You need to narrow the date range or select a specific Topic before downloading again.",
+      "explorer_required": "An administrator must enable Data Explorer before you can export course data.",
+      "report_failed": "The platform could not generate the report. An administrator can help you investigate the problem.",
+      "template_category": "Teaching templates",
+      "teacher_group_required": "You must configure a custom group for approved teachers before preparing the teaching features.",
+      "teacher_group_unsafe": "The teacher group must require approval for membership, and all of its owners must be administrators."
+    },
+    "site_settings": {
+      "educustomize_enabled": "This setting enables course management. You can <a href=\"/educustomize\">check the dependency status in the course catalog</a>.",
+      "educustomize_teacher_group": "This setting identifies the group whose members are approved teachers. You must select a custom group.",
+      "educustomize_model_ids": "This list contains the IDs of native AI models that course assistants are allowed to use.",
+      "educustomize_tool_names": "Course assistants can use the Time, RandomPicker and SearchUploadedDocuments tools when an administrator authorizes them. To keep course discussions isolated, the platform does not allow these assistants to read forum discussions through tools, run custom code or connect to external tools.",
+      "educustomize_workflow_ids": "This list contains the IDs of controlled teaching workflows that courses are allowed to use. You can prepare the teaching workflow under Plugins > Course setup."
+    }
+  }
+}

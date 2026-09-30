@@ -1,0 +1,17 @@
+{
+  "plugin": "discourse-educustomize",
+  "version": "0.3.1",
+  "release_date": "2026-09-30",
+  "source_base_commit": "093710a2a3d31968e98b792e970db132e04ef43e",
+  "source_includes_working_tree_changes": true,
+  "source_file_count": 189,
+  "source_manifest_sha256": "fae8b993b7cd518e1e4a2d535e2d3f56a263c18b8691d2cd186893afcc949a10",
+  "discourse": {
+    "version": "v2026.8.0",
+    "commit": "badad7b0456a628e578bc48b9f8c1259422b5d58"
+  },
+  "flat": {
+    "version": "3.0.0",
+    "commit": "2b6ee15f863d47a97fffce82484fb969c82c8a36"
+  }
+}

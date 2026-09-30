@@ -1,0 +1,271 @@
+// Preserve the theme palette and scope readability corrections to teaching controls.
+:root[data-educustomize-palette="light"] {
+  --educustomize-accent: #005375;
+}
+
+:root[data-educustomize-palette="ambient"] {
+  --educustomize-accent: #53205c;
+}
+
+:root[data-educustomize-palette="light"],
+:root[data-educustomize-palette="ambient"],
+:root[data-educustomize-palette="light"] body,
+:root[data-educustomize-palette="ambient"] body {
+  --primary: #202124;
+  --secondary: #fff;
+  --primary-very-low: #f4f5f6;
+  --primary-low: #e5e7eb;
+  --primary-low-mid: #c7cbd1;
+  --primary-medium: #626872;
+  --primary-high: #414750;
+  --primary-very-high: #202124;
+  --input-border-color: #747b84;
+  --d-sidebar-background: var(--educustomize-accent);
+  --d-sidebar-footer-fade: var(--educustomize-accent);
+  --tertiary: var(--educustomize-accent);
+  --quaternary: var(--educustomize-accent);
+  --header_background: var(--educustomize-accent);
+  --header_primary: #fff;
+  --header_primary-low-mid: #e8edf0;
+  --header_primary-medium: #fff;
+  --header_primary-high: #fff;
+  --d-selected: color-mix(in srgb, var(--educustomize-accent) 12%, white);
+  --tertiary-low: color-mix(in srgb, var(--educustomize-accent) 8%, white);
+  --tertiary-medium: color-mix(in srgb, var(--educustomize-accent) 65%, white);
+  --tertiary-high: color-mix(in srgb, var(--educustomize-accent) 85%, black);
+  --tertiary-very-high: color-mix(
+    in srgb,
+    var(--educustomize-accent) 70%,
+    black
+  );
+  --tertiary-50: color-mix(in srgb, var(--educustomize-accent) 4%, white);
+  --tertiary-100: color-mix(in srgb, var(--educustomize-accent) 8%, white);
+  --tertiary-200: color-mix(in srgb, var(--educustomize-accent) 15%, white);
+  --tertiary-300: color-mix(in srgb, var(--educustomize-accent) 25%, white);
+  --tertiary-400: color-mix(in srgb, var(--educustomize-accent) 40%, white);
+  --tertiary-500: color-mix(in srgb, var(--educustomize-accent) 60%, white);
+  --tertiary-600: var(--educustomize-accent);
+  --tertiary-700: var(--educustomize-accent);
+  --tertiary-800: var(--tertiary-high);
+  --tertiary-900: var(--tertiary-very-high);
+  --d-sidebar-link-color: var(--primary);
+  --d-sidebar-link-icon-color: var(--primary-high);
+  --d-sidebar-highlight-color: var(--primary);
+  --d-sidebar-highlight-background: var(--d-selected);
+  --d-sidebar-highlight-hover-background: var(--d-selected);
+  --d-sidebar-active-color: var(--primary);
+  --d-sidebar-active-icon-color: var(--primary);
+  --d-sidebar-active-background: var(--d-selected);
+}
+
+// Keep the existing sidebar controls readable on the accent surface.
+:root:is(
+  [data-educustomize-palette="light"],
+  [data-educustomize-palette="ambient"]
+) {
+  :is(#d-sidebar, .sidebar-hamburger-dropdown) {
+    --d-sidebar-background: var(--educustomize-accent);
+    --d-sidebar-footer-fade: var(--educustomize-accent);
+    --d-sidebar-header-color: #fff;
+    --d-sidebar-header-icon-color: #fff;
+    --d-sidebar-link-color: #fff;
+    --d-sidebar-link-icon-color: #e8edf0;
+    --d-sidebar-link-badge-color: #fff;
+    --d-sidebar-suffix-color: #fff;
+    --d-sidebar-highlight-suffix-color: #fff;
+    --d-sidebar-active-suffix-color: #fff;
+    --d-sidebar-border-color: var(--educustomize-accent);
+    --d-sidebar-section-border-color: rgb(255 255 255 / 25%);
+    --d-sidebar-highlight-background: rgb(255 255 255 / 15%);
+    --d-sidebar-highlight-hover-background: rgb(255 255 255 / 20%);
+    --d-sidebar-highlight-color: #fff;
+    --d-sidebar-active-background: rgb(255 255 255 / 20%);
+    --d-sidebar-active-color: #fff;
+    --d-sidebar-active-icon-color: #fff;
+  }
+
+  // Floating surfaces may be portalled or rendered inside the sidebar.
+  :is(
+    .fk-d-menu__inner-content,
+    .fk-d-tooltip__inner-content,
+    .select-kit-body,
+    .d-modal__container
+  ) {
+    color: var(--primary);
+    background: var(--secondary);
+
+    --d-sidebar-link-color: var(--primary);
+    --d-sidebar-link-icon-color: var(--primary-high);
+    --d-sidebar-suffix-color: var(--primary-high);
+    --d-sidebar-highlight-suffix-color: var(--primary);
+    --d-sidebar-active-suffix-color: var(--primary);
+    --d-sidebar-highlight-color: var(--primary);
+    --d-sidebar-highlight-background: var(--d-selected);
+    --d-sidebar-highlight-hover-background: var(--d-selected);
+    --d-sidebar-active-color: var(--primary);
+    --d-sidebar-active-icon-color: var(--primary);
+    --d-sidebar-active-background: var(--d-selected);
+
+    .d-icon {
+      color: currentcolor;
+    }
+  }
+
+  .select-kit .selected-choice {
+    color: var(--primary);
+    background: var(--primary-very-low);
+
+    .d-icon {
+      color: currentcolor;
+    }
+  }
+
+  .educustomize {
+    color: var(--primary);
+
+    :is(.educustomize__card, .educustomize__choice, .educustomize__skill) {
+      color: var(--primary);
+      background: var(--secondary);
+    }
+
+    :is(input:not([type="checkbox"]), textarea, select) {
+      color: var(--primary);
+      background: var(--secondary);
+
+      // Flat removes native control borders with !important.
+      border: 1px solid #747b84 !important;
+    }
+
+    .educustomize__choice:has(input:checked) {
+      background: var(--d-selected);
+      border-color: var(--educustomize-accent);
+    }
+
+    .educustomize__choice:hover {
+      background: var(--tertiary-low);
+    }
+  }
+
+  :is(.educustomize, .fk-d-menu, .fk-d-tooltip) :focus-visible {
+    // Flat clears input outlines with !important.
+    outline: 2px solid var(--educustomize-accent) !important;
+    outline-offset: 2px;
+  }
+
+  .d-header {
+    background-color: var(--educustomize-accent);
+
+    --d-header-icon-color: #fff;
+    --d-header-icon-color--hover: #fff;
+    --d-header-icon-color--active: #fff;
+  }
+
+  .d-header .d-icon,
+  .d-header .header-sidebar-toggle .btn .d-icon {
+    color: #fff;
+  }
+
+  .hamburger-panel .menu-panel {
+    background-color: var(--educustomize-accent);
+  }
+
+  // Flat sets the footer background with !important.
+  .sidebar-footer-wrapper,
+  .hamburger-panel .sidebar-footer-container {
+    background-color: var(--educustomize-accent) !important;
+  }
+
+  :is(#d-sidebar, .sidebar-hamburger-dropdown) .sidebar-section-header,
+  :is(#d-sidebar, .sidebar-hamburger-dropdown) .sidebar-section-header .d-icon {
+    color: #fff;
+  }
+}
+
+:root:is(
+    [data-educustomize-palette="light"],
+    [data-educustomize-palette="ambient"]
+  )
+  :is(#d-sidebar, .sidebar-hamburger-dropdown)
+  .educustomize-interface {
+  color: #fff;
+  border-color: var(--d-sidebar-section-border-color);
+
+  .btn-flat,
+  .d-icon {
+    color: #fff;
+  }
+}
+
+// The administrator sidebar uses a neutral surface in both supported themes.
+:root.admin-area:is(
+    [data-educustomize-palette="light"],
+    [data-educustomize-palette="ambient"]
+  ) {
+  :is(#d-sidebar, .sidebar-hamburger-dropdown) {
+    background-color: var(--secondary);
+
+    --d-sidebar-background: var(--secondary);
+    --d-sidebar-footer-fade: var(--secondary);
+    --d-sidebar-header-color: var(--primary);
+    --d-sidebar-header-icon-color: var(--primary-high);
+    --d-sidebar-link-color: var(--primary);
+    --d-sidebar-link-icon-color: var(--primary-high);
+    --d-sidebar-highlight-color: var(--primary);
+    --d-sidebar-highlight-background: var(--d-selected);
+    --d-sidebar-highlight-hover-background: var(--d-selected);
+    --d-sidebar-active-color: var(--primary);
+    --d-sidebar-active-icon-color: var(--primary);
+    --d-sidebar-active-background: var(--d-selected);
+    --d-sidebar-section-border-color: var(--primary-low);
+    --d-sidebar-border-color: var(--primary-low);
+
+    .educustomize-interface {
+      background-color: var(--secondary);
+    }
+
+    .admin-sidebar-nav-link__dot,
+    .admin-sidebar-nav-link__dot .d-icon {
+      color: var(--tertiary);
+    }
+
+    .sidebar-section-header,
+    .sidebar-section-header .d-icon,
+    .educustomize-interface,
+    .educustomize-interface .btn-flat,
+    .educustomize-interface .d-icon {
+      color: var(--primary);
+    }
+  }
+
+  .sidebar-footer-wrapper,
+  .hamburger-panel .sidebar-footer-container {
+    background-color: var(--secondary) !important;
+  }
+}
+
+// Native dark primary buttons can have white text on a pale blue surface.
+:root[data-educustomize-palette="dark"] .educustomize {
+  .btn-primary {
+    color: #10131a;
+    background: #5b8cff;
+
+    .d-icon {
+      color: currentcolor;
+    }
+
+    &:hover,
+    &:focus-visible {
+      color: #10131a;
+      background: #81a6ff;
+    }
+  }
+
+  :is(input:not([type="checkbox"]), textarea, select) {
+    border: 1px solid #8894a6 !important;
+  }
+
+  :focus-visible {
+    outline: 2px solid #81a6ff !important;
+    outline-offset: 2px;
+  }
+}

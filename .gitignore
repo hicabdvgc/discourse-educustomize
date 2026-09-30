@@ -1,0 +1,10 @@
+node_modules
+dist/
+releases/
+tmp/
+.bundle/
+*.tsbuildinfo
+.env*
+/gems
+/auto_generated
+.eslintcache

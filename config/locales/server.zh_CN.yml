@@ -1,0 +1,56 @@
+{
+  "zh_CN": {
+    "educustomize": {
+      "invalid_skills": "每项技能都需要包含名称、说明字段和指令正文。",
+      "configuration": {
+        "duplicate_keys": "配置文件中的每个助教都需要使用唯一的引用标识。",
+        "root_missing": "配置引用的根助教未包含在文件的助教列表中。",
+        "invalid_graph": "配置需要包含根助教及其全部 Delegate，并排除与它们无关的助教。助教之间的关系不能包含自引用、循环或嵌套的 Delegate，也不能引用当前配置以外的助教。",
+        "prompt_too_long": "提示词与技能合成后的内容超过了 100,000 个字符。您需要先缩短指令内容，再保存配置。",
+        "tools_unavailable": "当前课程无法使用以下工具：%{tools}。",
+        "copy_suffix": "（副本 %{number}）",
+        "invalid_mapping": "当前模型对应关系无效。您需要检查每项对应关系是否指向本配置中的助教，以及目标平台允许使用的模型。",
+        "model_required": "您需要为此助教选择目标平台已授权的模型。",
+        "save_failed": "平台未能创建引用标识为 %{key} 的助教。",
+        "name_taken": "名称 %{name} 已被使用。您需要为助教选择其他名称，然后再创建该助教。",
+        "validation": {
+          "required": "%{path} 处的对象缺少以下必填字段：%{fields}。",
+          "constant": "%{path} 处的值必须为 %{value}。",
+          "unknown_field": "此配置格式不支持 %{path} 处的字段。",
+          "minItems": "%{path} 处的列表至少需要包含 %{limit} 个项目。",
+          "maxItems": "%{path} 处的列表最多可以包含 %{limit} 个项目。",
+          "minLength": "%{path} 处的文本至少需要包含 %{limit} 个字符。",
+          "maxLength": "%{path} 处的文本最多可以包含 %{limit} 个字符。",
+          "minimum": "%{path} 处的数值必须大于或等于 %{limit}。",
+          "maximum": "%{path} 处的数值必须小于或等于 %{limit}。",
+          "exclusiveMinimum": "%{path} 处的数值必须大于 %{limit}。",
+          "pattern": "%{path} 处的文本必须符合规定的匹配模式（%{pattern}）。",
+          "unique_items": "%{path} 处的列表不能包含重复的项目。",
+          "type": "%{path} 处的值与预期的 JSON 类型（%{types}）不符。",
+          "invalid": "%{path} 处的值不符合此配置格式的要求。"
+        }
+      },
+      "invalid": "当前课程配置无效。您需要检查相关设置，然后重新尝试。",
+      "moderation_required": "管理员需要先启用分类群组版主功能，您才能配置课程。",
+      "empty_reply": "模型返回的回复中没有任何内容。",
+      "review_title": "生成与审核记录",
+      "draft": "草稿",
+      "approve": "批准并发布",
+      "reject": "拒绝",
+      "dependencies_required": "管理员需要先启用 Discourse AI、Discourse Workflows 和分类群组版主功能，然后才能准备教学工作流。",
+      "export_limit": "结果已达到 10,000 行的导出上限。您需要缩小日期范围或指定一个 Topic，然后重新下载。",
+      "explorer_required": "管理员需要先启用 Data Explorer，您才能导出课程数据。",
+      "report_failed": "平台未能生成报表。您可以联系管理员，协助排查这一问题。",
+      "template_category": "教学模板",
+      "teacher_group_required": "您需要先配置一个用于管理已批准教师的自定义群组，然后才能准备教学功能。",
+      "teacher_group_unsafe": "教师群组的入组申请需要经过审核，且该群组的所有者都需要是管理员。"
+    },
+    "site_settings": {
+      "educustomize_enabled": "此设置用于启用课程管理功能。您可以<a href=\"/educustomize\">在课程目录中检查依赖状态</a>。",
+      "educustomize_teacher_group": "此设置用于指定已批准教师所在的群组。您需要选择一个自定义群组。",
+      "educustomize_model_ids": "此列表用于填写课程助教获准使用的原生 AI 模型 ID。",
+      "educustomize_tool_names": "管理员授权后，课程助教可以使用 Time、RandomPicker 和 SearchUploadedDocuments 工具。为了保持课程讨论之间的隔离，平台不允许这些助教通过工具读取论坛讨论、执行自定义代码或连接外部工具。",
+      "educustomize_workflow_ids": "此列表用于填写课程获准使用的受控教学工作流 ID。您可以在“插件”下的“课程配置”页面准备教学工作流。"
+    }
+  }
+}

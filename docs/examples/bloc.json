@@ -1,0 +1,83 @@
+{
+  "format": "discourse-educustomize/agent-config",
+  "schema_version": 1,
+  "root": "dais",
+  "agents": [
+    {
+      "key": "dais",
+      "name": "Skills Migration Dais",
+      "description": "Coordinates two specialist Delegates and summarizes their verified contributions.",
+      "system_prompt": "You are the Dais of a course Bloc. Use spawn_agent to call BOTH available Delegates exactly once, sequentially. Ask Skills Migration Tutor to explain the student's arithmetic and Skills Migration Critic to independently verify it. Pass the full student question. Summarize both results in Chinese in no more than 150 words. Never invent tool results.",
+      "skills": [
+        {
+          "name": "Coordination",
+          "description": "Two independent contributions before synthesis.",
+          "instructions": "After BOTH Delegates return, begin the answer with [SKILLS-DAIS]. Identify the Tutor and Critic contributions, include their tool results briefly, and ask one follow-up learning question."
+        }
+      ],
+      "model": {
+        "provider": "open_ai",
+        "name": "deepseek-flash",
+        "display_name": "DeepSeek V4.1 Flash · live test"
+      },
+      "enabled": true,
+      "temperature": 0.2,
+      "top_p": 0.9,
+      "tools": [],
+      "delegates": [
+        "tutor",
+        "critic"
+      ]
+    },
+    {
+      "key": "tutor",
+      "name": "Skills Migration Tutor",
+      "description": "Explains the arithmetic and supplies a timestamp using the Time tool.",
+      "system_prompt": "You are the teaching Delegate. Explain the arithmetic in the supplied question. Keep your response under 100 Chinese characters plus a timestamp.",
+      "skills": [
+        {
+          "name": "Explain and timestamp",
+          "description": "Use Time once, then explain the arithmetic.",
+          "instructions": "Call the time tool exactly once for Asia/Shanghai. Begin with [SKILLS-TUTOR], include the returned date and time, and explain why 2 + 3 equals 5."
+        }
+      ],
+      "model": {
+        "provider": "open_ai",
+        "name": "deepseek-flash",
+        "display_name": "DeepSeek V4.1 Flash · live test"
+      },
+      "enabled": true,
+      "temperature": 0.2,
+      "top_p": 0.9,
+      "tools": [
+        "Time"
+      ],
+      "delegates": []
+    },
+    {
+      "key": "critic",
+      "name": "Skills Migration Critic",
+      "description": "Checks the arithmetic independently with a randomly selected verification method.",
+      "system_prompt": "You are the checking Delegate. Independently verify the arithmetic in the supplied question. Keep your reply under 100 Chinese characters.",
+      "skills": [
+        {
+          "name": "Choose a check",
+          "description": "Use RandomPicker once and apply the selected check.",
+          "instructions": "Call random_picker exactly once to choose one of these two options: reverse subtraction, count five objects. Apply the selected method to verify 2 + 3. Start your reply with [SKILLS-CRITIC] and name the actual selected method."
+        }
+      ],
+      "model": {
+        "provider": "open_ai",
+        "name": "deepseek-flash",
+        "display_name": "DeepSeek V4.1 Flash · live test"
+      },
+      "enabled": true,
+      "temperature": 0.2,
+      "top_p": 0.9,
+      "tools": [
+        "RandomPicker"
+      ],
+      "delegates": []
+    }
+  ]
+}

@@ -1,0 +1,100 @@
+{
+  "format": "discourse-educustomize/agent-config",
+  "schema_version": 1,
+  "root": "dais",
+  "agents": [
+    {
+      "key": "dais",
+      "name": "Import Dais",
+      "description": "Import Dais teaching role",
+      "system_prompt": "Original Import Dais prompt.\nPreserve blank lines.\n\n学生讨论。",
+      "skills": [
+        {
+          "name": "Evidence",
+          "description": "Ground the answer.",
+          "instructions": "Ask for evidence before conclusions."
+        },
+        {
+          "name": "Reasoning",
+          "description": "",
+          "instructions": "Explain each inference."
+        }
+      ],
+      "model": {
+        "provider": "fake",
+        "name": "fake",
+        "display_name": "Fake model"
+      },
+      "enabled": true,
+      "temperature": 0.35,
+      "top_p": 0.8,
+      "tools": [
+        "Time"
+      ],
+      "delegates": [
+        "tutor",
+        "critic"
+      ]
+    },
+    {
+      "key": "tutor",
+      "name": "Import Tutor",
+      "description": "Import Tutor teaching role",
+      "system_prompt": "Original Import Tutor prompt.\nPreserve blank lines.\n\n学生讨论。",
+      "skills": [
+        {
+          "name": "Evidence",
+          "description": "Ground the answer.",
+          "instructions": "Ask for evidence before conclusions."
+        },
+        {
+          "name": "Reasoning",
+          "description": "",
+          "instructions": "Explain each inference."
+        }
+      ],
+      "model": {
+        "provider": "fake",
+        "name": "fake",
+        "display_name": "Fake model"
+      },
+      "enabled": true,
+      "temperature": 0.35,
+      "top_p": 0.8,
+      "tools": [
+        "Time"
+      ],
+      "delegates": []
+    },
+    {
+      "key": "critic",
+      "name": "Import Critic",
+      "description": "Import Critic teaching role",
+      "system_prompt": "Original Import Critic prompt.\nPreserve blank lines.\n\n学生讨论。",
+      "skills": [
+        {
+          "name": "Evidence",
+          "description": "Ground the answer.",
+          "instructions": "Ask for evidence before conclusions."
+        },
+        {
+          "name": "Reasoning",
+          "description": "",
+          "instructions": "Explain each inference."
+        }
+      ],
+      "model": {
+        "provider": "fake",
+        "name": "fake",
+        "display_name": "Fake model"
+      },
+      "enabled": true,
+      "temperature": 0.35,
+      "top_p": 0.8,
+      "tools": [
+        "Time"
+      ],
+      "delegates": []
+    }
+  ]
+}

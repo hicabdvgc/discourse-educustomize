@@ -1,0 +1,19 @@
+plugins:
+  educustomize_enabled:
+    default: false
+    client: true
+  educustomize_teacher_group:
+    default: ""
+    type: group
+  educustomize_model_ids:
+    default: ""
+    type: list
+    list_type: simple
+  educustomize_tool_names:
+    default: ""
+    type: list
+    list_type: simple
+  educustomize_workflow_ids:
+    default: ""
+    type: list
+    list_type: simple

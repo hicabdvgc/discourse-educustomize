@@ -1,0 +1,13 @@
+name: Discourse Plugin
+on:
+  push:
+    branches: [main, "codex/**"]
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  ci:
+    uses: discourse/.github/.github/workflows/discourse-plugin.yml@v1
+    with:
+      core_ref: v2026.8.0
+      name: discourse-educustomize
